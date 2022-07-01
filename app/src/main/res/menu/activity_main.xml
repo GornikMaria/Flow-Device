@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_phone"
+        android:icon="@drawable/vector"
+        android:title="@string/device"/>
+    <item
+        android:id="@+id/action_arm"
+        android:icon="@drawable/vector2"
+        android:title="@string/taken" />
+    <item
+        android:id="@+id/action_history"
+        android:icon="@drawable/vector3"
+        android:title="@string/history" />
+</menu>
