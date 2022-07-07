@@ -10,70 +10,20 @@ import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.flowdevice.databinding.FragmentDevicesBinding
 
-data class Device(
-    val name: String,
-    val OS: String,
-    val avatar: Int
-)
 
-fun generateDevices(): List<Device> {
-    return listOf(
-        Device(
-            "iPhone SE 2020",
-            "iOS 15.2",
-            R.drawable.iphone_se,
-        ),
-        Device(
-            "iPhone 12",
-            "iOS 16",
-            R.drawable.iphone_12,
-        ),
-        Device(
-            "Xiaomi 9t",
-            "Android 12",
-            R.drawable.xiaomi_9t,
-        ),
-        Device(
-            "Samsung A3",
-            "Android 5",
-            R.drawable.samsung_a3,
-        ),
-        Device(
-            "Pixel 6",
-            "Android 13",
-            R.drawable.pixel_6_google_,
-        ),
-        Device(
-            "iPad",
-            "iOS 14",
-            R.drawable.ipad14,
-        ),
-        Device(
-            "Samsung Galaxy A32",
-            "Android 11",
-            R.drawable.samsung_galaxy_a32,
-        ),
-        Device(
-            "ipad 4",
-            "iOS 10",
-            R.drawable.ipad_4,
-        ),
-        Device(
-            "Xiaomi Redmi Note 8 Pro",
-            "Android 9",
-            R.drawable.xiaomi_redmi_note_8_pro,
-        )
-    )
-}
 
 class DevicesAdapter(
     context: Context,
-    var devices: List<Device>
+    var devices: List<DevicesViewModel.Device>
 ) : RecyclerView.Adapter<DeviceViewHolder>() {
 
     private val inflater: LayoutInflater =
@@ -90,7 +40,7 @@ class DevicesAdapter(
         holder.bind(getItem(position)) //вызывается каждый раз, чтобы обновлять данные
     }
 
-    private fun getItem(position: Int): Device =
+    private fun getItem(position: Int): DevicesViewModel.Device =
         devices[position]  //метод, где по позиции будем возваращать данные об устройстве
 }
 
@@ -101,7 +51,7 @@ class DeviceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val os: TextView = itemView.findViewById(R.id.OS)
     private val avatar: ImageView = itemView.findViewById(R.id.avatar)
 
-    fun bind(device: Device) {
+    fun bind(device: DevicesViewModel.Device) {
         name.text = device.name
         os.text = device.OS
         loadImageAsync(device.avatar, avatar)
@@ -113,7 +63,6 @@ class DeviceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             .into(avatarView)
     }
 }
-
 
 class DevicesFragment : Fragment(R.layout.fragment_devices) {
 
@@ -128,11 +77,11 @@ class DevicesFragment : Fragment(R.layout.fragment_devices) {
         return binding.root
     }
 
+    val mViewModel: DevicesViewModel by viewModels()
+    val adapter by lazy { DevicesAdapter(requireContext(), listOf()) } //адаптер(активити, список)
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val devices = generateDevices()  //список девайсов
-        val adapter = DevicesAdapter(requireContext(), devices) //адаптер(активити, список)
         val gridLayoutManager = GridLayoutManager(
             context,
             2,
@@ -149,30 +98,27 @@ class DevicesFragment : Fragment(R.layout.fragment_devices) {
             // 0. Проверить на пустую строку, если пустая или null - отобразить исходный список
             // 1. Пройтись по всем именам, отобрать те, которые подходят строке без учета регистра (.lowerCase() / toLowerCase())
             // 2. Сказать, что список обновлен
+
             override fun onQueryTextChange(query: String?): Boolean {
-                return if (query == null || query == "") {
-                    adapter.devices = generateDevices()
-                    adapter.notifyDataSetChanged()
-                    false
-                } else {
-                    val queryLower = query.lowercase()
-                    val filteredDevices = devices.filter { device ->
-                        device.name
-                            .lowercase()
-                            .contains(queryLower)
-                    }
-                    adapter.devices = filteredDevices
-                    adapter.notifyDataSetChanged()
-                    false
-                }
+                mViewModel.onNewSearch(query)
+                return false
             }
         })
+//        mViewModel = ViewModelProvider(this).get(DevicesViewModel::class.java)
+
+        mViewModel.liveData.observe(viewLifecycleOwner) { devices ->
+            adapter.devices = devices  // Передать в адаптер новый список
+            adapter.notifyDataSetChanged() // Сказать адаптеру перерисоваться
+        }
+
+
+
+
     }
 }
 
 
 class CharacterItemDecoration(private val offset: Int) : RecyclerView.ItemDecoration() {
-//123
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
@@ -185,11 +131,9 @@ class CharacterItemDecoration(private val offset: Int) : RecyclerView.ItemDecora
 
         val layoutParams = view.layoutParams as GridLayoutManager.LayoutParams
         if (layoutParams.spanIndex % 2 == 0) {
-            //outRect.top = offset
             outRect.left = offset
             outRect.right = offset / 2
         } else {
-            //outRect.top = offset
             outRect.right = offset
             outRect.left = offset / 2
         }
