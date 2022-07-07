@@ -3,12 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/drawable/ic_search.xml" value="0.196" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/drawable/iphone_12.xml" value="0.283" />
         <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/drawable/manu_colors.xml" value="0.196" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/drawable/search.xml" value="0.3325" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/drawable/search_background.xml" value="0.1085" />
         <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/fragment_devices.xml" value="0.25" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/activity_main2.xml" value="0.18" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/device_recycler.xml" value="0.17105263157894737" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/fragment_devices.xml" value="0.22" />
         <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/fragment_history.xml" value="0.22" />
-        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/fragment_taken.xml" value="0.365625" />
-        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/menu/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/fragment_taken.xml" value="0.16" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/list_item.xml" value="0.23092105263157894" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/layout/list_item_device.xml" value="0.18" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/menu/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/menu/activity_main2.xml" value="0.365625" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/menu/device_recycler.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/menu/list_item_device.xml" value="0.33" />
+        <entry key="..\:/Users/maria.gornik/StudioProjects/FlowDevice/app/src/main/res/menu/search_menu.xml" value="0.18" />
       </map>
     </option>
   </component>
