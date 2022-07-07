@@ -171,19 +171,6 @@ class DevicesFragment : Fragment(R.layout.fragment_devices) {
 }
 
 
-fun main() {
-    val dogs = arrayOf("Jack", "Max", "Mini")
-    val filteredArray = dogs.filter { dog ->
-        false
-    }
-
-    filteredArray.forEach { dog ->
-        println(dog)
-    }
-}
-
-
-
 class CharacterItemDecoration(private val offset: Int) : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(
