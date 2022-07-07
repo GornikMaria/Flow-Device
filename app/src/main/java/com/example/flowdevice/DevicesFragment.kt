@@ -172,7 +172,7 @@ class DevicesFragment : Fragment(R.layout.fragment_devices) {
 
 
 class CharacterItemDecoration(private val offset: Int) : RecyclerView.ItemDecoration() {
-
+//123
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
