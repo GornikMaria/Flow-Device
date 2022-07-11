@@ -38,9 +38,6 @@ class DevicesViewModel : ViewModel() {
 
     }
 
-    fun onDeviceClick(id: String) {
-        // Открытие страницы с девайсами
-    }
 
     private fun generateDevices(): List<Device> {
         return listOf(

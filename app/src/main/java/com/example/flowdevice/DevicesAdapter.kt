@@ -7,9 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class DevicesAdapter(
     context: Context,
-    var devices: List<DevicesViewModel.Device>,
-    val onClick: (String) -> Unit
-) : RecyclerView.Adapter<DeviceViewHolder>() {
+    var devices: List<DevicesViewModel.Device>) : RecyclerView.Adapter<DeviceViewHolder>() {
 
     private val inflater: LayoutInflater =
         LayoutInflater.from(context) //LayoutInflater для создания View
@@ -18,9 +16,6 @@ class DevicesAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceViewHolder {
         val view = inflater.inflate(R.layout.list_item_device, parent, false)
-        view.setOnClickListener {
-            onClick("id")
-        }
         return DeviceViewHolder(view)  //Создание View
     }
 

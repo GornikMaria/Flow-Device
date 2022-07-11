@@ -15,9 +15,7 @@ class DevicesFragment : Fragment(R.layout.fragment_devices) {
     private lateinit var binding: FragmentDevicesBinding
     private val viewModel: DevicesViewModel by viewModels()
     private val adapter by lazy {
-        DevicesAdapter(requireContext(), listOf(), onClick = {
-            viewModel.onDeviceClick(it)
-        })
+        DevicesAdapter(requireContext(), listOf())
     } //адаптер(активити, список)
 
     override fun onCreateView(
