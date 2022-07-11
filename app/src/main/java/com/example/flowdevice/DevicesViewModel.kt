@@ -11,18 +11,19 @@ class DevicesViewModel : ViewModel() {
         val avatar: Int
     )
 
-    val liveData = MutableLiveData<List<Device>>()
+    // Состояние экрана
+    val state = MutableLiveData<List<Device>>()
 
     private val devices = generateDevices()
 
     init {
         println("Вью модель создалась")
-        liveData.value = devices
+        state.value = devices
     }
 
     fun onNewSearch(query: String?) {
         if (query == null || query == "") {
-            liveData.value = generateDevices()
+            state.value = generateDevices()
 
         } else {
             val queryLower = query.lowercase()
@@ -31,10 +32,14 @@ class DevicesViewModel : ViewModel() {
                     .lowercase()
                     .contains(queryLower)
             }
-            liveData.value = filteredDevices
+            state.value = filteredDevices
 
         }
 
+    }
+
+    fun onDeviceClick(id: String) {
+        // Открытие страницы с девайсами
     }
 
     private fun generateDevices(): List<Device> {

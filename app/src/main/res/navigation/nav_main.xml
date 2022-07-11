@@ -6,20 +6,20 @@
     app:startDestination="@+id/devicesFragment">
 
     <fragment
-        android:id="@+id/historyFragment"
-        android:name="com.example.flowdevice.HistoryFragment"
-        android:label="HistoryFragment"
-        tools:layout="@layout/fragment_history" />
+        android:id="@+id/ConfirmationFragment"
+        android:name="com.example.flowdevice.ConfirmationFragment"
+        android:label="ConfirmationFragment"
+        tools:layout="@layout/fragment_confirmation" />
     <fragment
         android:id="@+id/devicesFragment"
         android:name="com.example.flowdevice.DevicesFragment"
         android:label="DevicesFragment"
         tools:layout="@layout/fragment_devices"/>
     <fragment
-        android:id="@+id/takenFragment"
-        android:name="com.example.flowdevice.TakenFragment"
-        android:label="TakenFragment"
-        tools:layout="@layout/fragment_taken"/>
+        android:id="@+id/UserSelectionFragment"
+        android:name="com.example.flowdevice.UserSelectionFragment"
+        android:label="UserSelectionFragment"
+        tools:layout="@layout/fragment_user_selection"/>
 
 
 </navigation>

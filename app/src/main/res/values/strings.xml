@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Flow Device</string>
-    <string name="device">Девайсы</string>
+    <string name="devices">Девайсы</string>
     <string name="taken">Взятые</string>
     <string name="history">История</string>
+    <string name="employee">Сотрудник</string>
+    <string name="device">Девайс</string>
 </resources>

@@ -8,30 +8,23 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:liftOnScroll="true">
+        app:liftOnScroll="true"
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
-
-            <SearchView
-                android:id="@+id/searchview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@drawable/search"
-                android:iconifiedByDefault="false"
-                android:queryHint="Поиск" />
-
-        </androidx.appcompat.widget.Toolbar>
+            android:background="@color/white"
+            app:navigationIcon="@drawable/strelka"
+            app:titleTextAppearance="@style/ToolbarTitleStyle"
+            app:title="Выбор сотрудника"
+            app:titleTextColor="@color/black"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/DeviceList"
+        android:id="@+id/UserList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
@@ -40,5 +33,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

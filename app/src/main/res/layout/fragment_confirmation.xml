@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/strelka"
+        app:title="Подтверждение"
+        app:titleTextAppearance="@style/ToolbarTitleStyle"
+        app:titleTextColor="@color/black">
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/employee"
+        android:text="@string/employee"
+        android:textColor="@color/black"
+        android:textStyle = "bold"
+        android:textSize="15sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_goneMarginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf = "@id/toolbar2"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/iconka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/employee"
+        app:srcCompat="@drawable/ellipse_5"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:id="@+id/device"
+        android:text="@string/device"
+        android:textColor="@color/black"
+        android:textStyle = "bold"
+        android:textSize="15sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf = "@id/iconka"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
+    <TextView
+        android:id="@+id/name_employee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Иванова"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/employee"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="8dp">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/device_img"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device"
+        app:srcCompat="@drawable/iphone_12"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/name_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="iPhone 12"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="8dp">
+    </TextView>
+    <TextView
+        android:id="@+id/name_os"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="iOS 13.3"
+        android:textColor="@color/grey"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_device"
+        android:layout_marginLeft="72dp">
+    </TextView>
+
+    <Button
+        android:id="@+id/button"
+        android:colorAccent="@color/green"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="Взять"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

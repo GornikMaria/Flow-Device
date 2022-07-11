@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
                     controller.navigate(R.id.devicesFragment)
                 }
                 R.id.action_arm -> {
-                    controller.navigate(R.id.takenFragment)
+                    controller.navigate(R.id.UserSelectionFragment)
                 }
                 R.id.action_history -> {
-                    controller.navigate(R.id.historyFragment)
+                    controller.navigate(R.id.ConfirmationFragment)
                 }
             }
             return@setOnItemSelectedListener true
